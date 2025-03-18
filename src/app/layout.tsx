@@ -17,17 +17,17 @@ export default function RootLayout({
       <body>
         <header>
           <nav className="bg-gray-800 p-4">
-            <ul className="flex space-x-4 text-white">
-              <li>
+            <ul className="grid grid-cols-4 w-full max-w-screen-lg mx-auto divide-gray-700">
+              <li className="text-center py-2">
                 <Link href="/">홈</Link>
               </li>
-              <li>
+              <li className="text-center py-2">
                 <Link href="/champions">챔피언 목록</Link>
               </li>
-              <li>
+              <li className="text-center py-2">
                 <Link href="/items">아이템 목록</Link>
               </li>
-              <li>
+              <li className="text-center py-2">
                 <Link href="/rotation">챔피언 로테이션</Link>
               </li>
             </ul>
@@ -39,7 +39,13 @@ export default function RootLayout({
         </main>
 
         <footer className="bg-gray-800 p-4 text-center text-white">
-          <p>© 2025 My Riot App</p>
+          <p className="text-base">
+            [Your Product Name] is not endorsed by Riot Games and does not
+            reflect the views or opinions of Riot Games or anyone officially
+            involved in producing or managing Riot Games properties. Riot Games
+            and all associated properties are trademarks or registered
+            trademarks of Riot Games, Inc.
+          </p>
         </footer>
       </body>
     </html>
