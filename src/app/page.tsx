@@ -18,37 +18,39 @@ export default function HomePage() {
               <Image
                 src="/asset/pvp.jpg"
                 alt="챔피언 이미지"
-                width={600}
-                height={300}
-                className="mb-2"
+                width={700}
+                height={400}
+                className="mb-4"
               />
               <span>챔피언 목록 보기</span>
             </div>
           </Link>
         </li>
+
         <li className="text-orange-400">
           <Link href="/rotation">
             <div className="flex flex-col items-center">
               <Image
                 src="/asset/echo.jpg"
                 alt="로테이션 이미지"
-                width={600}
-                height={300}
-                className="mb-2"
+                width={700}
+                height={400}
+                className="mb-4"
               />
               <span>금주 로테이션 확인</span>
             </div>
           </Link>
         </li>
+
         <li className="text-orange-400">
           <Link href="/items">
             <div className="flex flex-col items-center">
               <Image
                 src="/asset/bard.jpg"
                 alt="아이템 이미지"
-                width={600}
-                height={300}
-                className="mb-2"
+                width={700}
+                height={400}
+                className="mb-4"
               />
               <span>아이템 목록 보기</span>
             </div>

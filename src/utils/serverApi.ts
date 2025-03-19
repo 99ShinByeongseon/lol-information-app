@@ -1,20 +1,12 @@
-"use server";
+import { PATH } from "@/constants/path";
+import { getRecentVersion } from "@/services/server/versionService";
 
-import type { ChampionsDetail } from "@/types/Champion";
-
-export async function fetchChampionList(): Promise<ChampionsDetail[]> {
-    
-  const champions: ChampionsDetail[] = [
-    {
-      version: "13.4.1",
-      id: "Aatrox",
-      key: "266",
-      name: "Aatrox",
-      title: "the Darkin Blade",
-      blurb: "Some description",
-      image: { full: "Aatrox.png" },
-    },
-    // ... 추가 챔피언 데이터
-  ];
-  return champions;
-}
+export const fetchChampionList = async () => {
+  const version = await getRecentVersion();
+  const res = await fetch(
+    `${PATH.DDRAGON_URL}/cdn/${version}/data/ko_KR/champion.json`,
+    { next: { revalidate: 86400 } }
+  );
+  const { data } = await res.json();
+  return data;
+};
